@@ -18,6 +18,12 @@ public class Fundamentals {
         int age = 16;
         boolean studying = true;
         double average = 10;
+        
+        String district = new String("center");
+        
+        int note1 = Integer.parseInt("8");
+        double averageF = Double.parseDouble("5.5");
+        boolean aproved = Boolean.parseBoolean("true");
     }
     
 }
