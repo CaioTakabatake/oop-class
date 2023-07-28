@@ -14,7 +14,10 @@ public class Fundamentals {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        String name = "Caio";
+        int age = 16;
+        boolean studying = true;
+        double average = 10;
     }
     
 }
