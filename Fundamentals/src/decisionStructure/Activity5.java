@@ -26,7 +26,7 @@ public class Activity5 {
         System.out.println("Informe a quantidade de km rodados:");
         double quantidadeKmRodados = scanner.nextDouble();
 
-        // Cálculo do valor do aluguel
+        // Cálcula o valor do aluguel
         double valorTotalDiarias = 0;
         double valorTotalKmRodados = 0;
 
