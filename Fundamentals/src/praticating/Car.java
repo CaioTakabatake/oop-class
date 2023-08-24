@@ -1,4 +1,4 @@
-package classes;
+package praticating;
 
 public class Car {
     private String model;
