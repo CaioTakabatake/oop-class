@@ -3,16 +3,34 @@ package praticating;
 public class Car {
     private String model;
     private String brand;
-    private String color;
+    private CarColor color;
+    private CarGear gear;
     private int year;
     private int wheels;
 
-    public Car(String model, String brand, String color, int year, int wheels) {
+    public Car(String model, String brand, CarColor color, int year, int wheels) {
         this.model = model;
         this.brand = brand;
         this.color = color;
+        this.gear = CarGear.NEUTRAL;
         this.year = year;
         this.wheels = wheels;
+    }
+
+    public void increaseGear() {
+        CarGear currentGear = this.gear;
+
+        if (currentGear == CarGear.REVERSE_GEAR) {
+            // If the current gear is in reverse, set to neutral
+            this.gear = CarGear.NEUTRAL;
+        } else if (currentGear != CarGear.FIFTH_GEAR) {
+            // Increment the gear if not in the highest gear
+            this.gear = CarGear.values()[currentGear.getNumberGear()];
+        }
+    }
+
+    public void changeGearToReverse() {
+        this.gear = CarGear.REVERSE_GEAR;
     }
 
     public String getModel() {
@@ -31,12 +49,20 @@ public class Car {
         this.brand = brand;
     }
 
-    public String getColor() {
+    public CarColor getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(CarColor color) {
         this.color = color;
+    }
+
+    public CarGear getGear() {
+        return gear;
+    }
+
+    public void setGear(CarGear gear) {
+        this.gear = gear;
     }
 
     public int getYear() {
@@ -53,5 +79,17 @@ public class Car {
 
     public void setWheels(int wheels) {
         this.wheels = wheels;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", brand='" + brand + '\'' +
+                ", color=" + color +
+                ", gear=" + gear +
+                ", year=" + year +
+                ", wheels=" + wheels +
+                '}';
     }
 }
