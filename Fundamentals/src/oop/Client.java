@@ -1,6 +1,6 @@
 package oop;
 
-public class Client {
+public class Client implements MovieRental, CustomerRegistration {
     private String name;
     private String email;
 
@@ -35,6 +35,33 @@ public class Client {
 
     public double calculateRental(int numberOfDays, boolean isNewRelease) {
         return numberOfDays * 6.99;
+    }
+
+    @Override
+    public boolean validateName(String name) {
+        if (name.length() > 7) {
+            System.out.println("Customer name: " + name + " is valid ✅");
+            return true;
+        } else {
+            System.out.println("Customer name: " + name + " is invalid ❌");
+            return false;
+        }
+    }
+
+    @Override
+    public boolean checkGoogleEmailDomain(String email) {
+        if (email == null) {
+            System.out.println("Email is null");
+            return false;
+        }
+
+        if (email.contains("@gmail.com")) {
+            System.out.println("Customer email: " + email + " is valid ✅");
+            return true;
+        } else {
+            System.out.println("Customer email: " + email + " is invalid ❌");
+            return false;
+        }
     }
 
     @Override
